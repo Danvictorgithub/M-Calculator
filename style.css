@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: Roboto;
 }
 body {
     height: 100vh;
@@ -10,9 +11,9 @@ body {
     align-items: center;
 }
 .calculator-main {
-    background-color: white;
-    height: 90vh;
-    width: 48vh;
+    background-color: #F0F0F0;
+    height: 95vh;
+    width: 44vh;
     border-radius: 36px;
     filter: drop-shadow(30px 10px 4px #4444dd);
 }
@@ -31,5 +32,77 @@ body {
 .calculator-bottom > * {
     flex: 1;
     width: 100%;
-    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+}
+.column-one > * {
+    flex: 0 0 auto;
+    height: 60px;
+    width: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:6px;
+    background-color: #F0F0F0;
+    filter:drop-shadow(4px 4px 2px rgb(199, 199, 199)) drop-shadow( -4px -4px 2px white);
+}
+.column-two > * {
+    flex: 0 0 auto;
+    height: 60px;
+    width: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:6px;
+    background-color: #F0F0F0;
+    filter:drop-shadow(4px 4px 2px rgb(199, 199, 199)) drop-shadow( -4px -4px 2px white);
+}
+
+.column-three > * {
+    flex: 0 0 auto;
+    height: 60px;
+    width: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:6px;
+    background-color: #F0F0F0;
+    filter:drop-shadow(4px 4px 2px rgb(199, 199, 199)) drop-shadow( -4px -4px 2px white);
+}
+
+.column-four > * {
+    flex: 0 0 auto;
+    height: 60px;
+    width: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:6px;
+    background-color: #F0F0F0;
+    filter:drop-shadow(4px 4px 2px rgb(199, 199, 199)) drop-shadow( -4px -4px 2px white);
+}
+.column-five > * {
+    flex: 0 0 auto;
+    height: 60px;
+    width: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:6px;
+    background-color: #F0F0F0;
+    filter:drop-shadow(4px 4px 2px rgb(199, 199, 199)) drop-shadow( -4px -4px 2px white);
+}
+.extra {
+    background-color: #B600F9;
+}
+.num {
+    color:rgb(53, 53, 53);
+}
+.operator {
+    color:gray
 }
