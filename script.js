@@ -1,14 +1,17 @@
 // Calculator DOMs
 const numButton = document.querySelectorAll('.num');
+
 const delButton = document.querySelector('.del');
 const clearEntry = document.querySelector('.clear-entry');
 const allClear = document.querySelector('.all-clear');
+
 const addition = document.querySelector('.addition')
+const equal = document.querySelector('.equal');
+
 let screen = document.querySelector('.screen');
 addStatus = false;
 screen.textContent ='0';
 firstOperand = '';
-total = '';
 // Event Listeners
 // Inputs Numbers on Screen
 numButton.forEach(button => {
@@ -44,13 +47,16 @@ addition.addEventListener('click', () => {
         firstOperand = parseInt(screen.textContent);
     } else {
         firstOperand += parseInt(screen.textContent);
-        total = firstOperand;
         screen.textContent = firstOperand;
     }
     console.log(firstOperand);
 });
 
-// Special Operator
+equal.addEventListener('click', () => {
+    firstOperand += parseInt(screen.textContent);
+    screen.textContent = firstOperand;
+});
+// Special DELETE Operators
 // Deletes Input
 delButton.addEventListener('click', () => {
     screen.textContent = `${screen.textContent.slice(0,-1)}`;
@@ -66,7 +72,6 @@ clearEntry.addEventListener('click', () => {
 allClear.addEventListener('click', () => {
     screen.textContent ='0';
     firstOperand = 0;
-    total = '';
 });
 
 
