@@ -114,4 +114,7 @@ body {
 .operator {
     color:gray
 }
+.active {
+    background-color: #B600F9;
+}
 

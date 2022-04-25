@@ -3,10 +3,12 @@ const numButton = document.querySelectorAll('.num');
 const delButton = document.querySelector('.del');
 const clearEntry = document.querySelector('.clear-entry');
 const allClear = document.querySelector('.all-clear');
+const addition = document.querySelector('.addition')
 let screen = document.querySelector('.screen');
+addStatus = false;
 screen.textContent ='0';
 firstOperand = '';
-secondOperand = '';
+total = '';
 // Event Listeners
 // Inputs Numbers on Screen
 numButton.forEach(button => {
@@ -15,10 +17,39 @@ numButton.forEach(button => {
             screen.textContent = `${screen.textContent.slice(0,-1)}`;
         }
         if (screen.textContent.length < 18) {
+            if (addStatus == true) {
+                addStatusUpdate();
+                screen.textContent = '';
+            }
             screen.textContent += `${button.textContent}`;
         }
     });
-}); 
+});
+// Functions
+function addStatusUpdate () {
+    if (addStatus == false) {
+        addStatus = true;
+        addition.classList.toggle("active");
+        console.log("Now active");
+    } else {
+        addStatus = false;
+        addition.classList.toggle("active");
+        console.log("Now deactive");
+    }
+}
+// Adds two Operand
+addition.addEventListener('click', () => {
+    addStatusUpdate();
+    if (firstOperand.length == 0) {
+        firstOperand = parseInt(screen.textContent);
+    } else {
+        firstOperand += parseInt(screen.textContent);
+        total = firstOperand;
+        screen.textContent = firstOperand;
+    }
+    console.log(firstOperand);
+});
+
 // Special Operator
 // Deletes Input
 delButton.addEventListener('click', () => {
@@ -34,8 +65,8 @@ clearEntry.addEventListener('click', () => {
 // Delete All Operands
 allClear.addEventListener('click', () => {
     screen.textContent ='0';
-    firstOperand = '';
-    secondOperand = '';
+    firstOperand = 0;
+    total = '';
 });
 
 
